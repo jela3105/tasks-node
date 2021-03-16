@@ -16,5 +16,8 @@
   "bugs": {
     "url": "https://github.com/jela3105/tasks-node/issues"
   },
-  "homepage": "https://github.com/jela3105/tasks-node#readme"
+  "homepage": "https://github.com/jela3105/tasks-node#readme",
+  "dependencies": {
+    "colors": "^1.4.0"
+  }
 }
