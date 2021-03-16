@@ -12,6 +12,16 @@ const showMenu = () => {
   console.log(`${"5.".green} Complete task(s)`);
   console.log(`${"6.".green} Delete task(s)`);
   console.log(`${"0.".green} Quit\n`);
+
+  const readline = require("readline").createInterface({
+    input: process.stdin,
+    output: process.stdout,
+  });
+
+  readline.question("Select some option: ", (opt) => {
+    console.log({ opt });
+    readline.close();
+  });
 };
 module.exports = {
   showMenu,
