@@ -4,9 +4,11 @@ const { showMenu, pause } = require("./helpers/messages");
 
 const main = async () => {
   console.clear();
-  console.log("Hello world");
-  showMenu();
-  pause();
+  let opt = "";
+  do {
+    opt = await showMenu();
+    if (opt !== "0") await pause();
+  } while (opt !== "0");
 };
 
 main();
