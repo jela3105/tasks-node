@@ -1,3 +1,4 @@
+const Task = require("./task");
 class Tasks {
   _list = {};
   constructor() {
@@ -5,8 +6,8 @@ class Tasks {
   }
 
   createTask(desc = "") {
-    const taks = new Task(desc);
-    this._list[taks.id] = task;
+    const task = new Task(desc);
+    this._list[task.id] = task;
   }
 }
 

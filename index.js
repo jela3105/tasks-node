@@ -12,7 +12,7 @@ const main = async () => {
     switch (opt) {
       case "1":
         const desc = await readInput("Description: ");
-        console.log(desc);
+        tasks.createTask(desc);
         break;
       case "2":
         console.log(tasks._list);
