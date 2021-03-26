@@ -1,2 +1,2 @@
 # tasks-node
-A simple consol app of tasks with node
+A simple console app of tasks with node
