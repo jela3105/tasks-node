@@ -1,5 +1,6 @@
 require("colors");
 
+const { saveData } = require("./helpers/saveFile");
 const { inquirerMenu, pause, readInput } = require("./helpers/inquirer");
 const Tasks = require("./models/tasks");
 
@@ -20,6 +21,8 @@ const main = async () => {
       case "1":
         break;
     }
+
+    //saveData(tasks.arrList);
     await pause();
   } while (opt !== "0");
 };
