@@ -26,6 +26,22 @@ class Tasks {
     const task = new Task(desc);
     this._list[task.id] = task;
   }
+
+  completeList() {
+    //1. green
+    //Completed green
+    //Pending red
+    //1. Description :: Complete | Pending
+
+    this.arrList.forEach((task, i) => {
+      console.log(
+        `${i++}.`.green +
+          ` ${task.desc} :: ${
+            task.completedOn ? "Completed".green : "Pending".red
+          }`
+      );
+    });
+  }
 }
 
 module.exports = Tasks;
