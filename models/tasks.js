@@ -39,15 +39,18 @@ class Tasks {
   }
 
   showTasksByCompleted(completed = true) {
-    this.arrList.forEach((task, i) => {
+    let counter = 0;
+    this.arrList.forEach((task) => {
       if (completed) {
+        counter++;
         task.completedOn
           ? console.log(
-              `${i++}.`.green + ` ${task.desc} :: ${"Completed".green}`
+              `${counter}.`.green + ` ${task.desc} :: ${task.completedOn.green}`
             )
           : null;
       } else if (!task.completedOn & !completed) {
-        console.log(`${i++}.`.green + ` ${task.desc} :: ${"Pending".red}`);
+        counter++;
+        console.log(`${counter}.`.green + ` ${task.desc} :: ${"Pending".red}`);
       }
     });
   }
