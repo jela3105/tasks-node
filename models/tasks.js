@@ -27,12 +27,7 @@ class Tasks {
     this._list[task.id] = task;
   }
 
-  completeList() {
-    //1. green
-    //Completed green
-    //Pending red
-    //1. Description :: Complete | Pending
-
+  showAllList() {
     this.arrList.forEach((task, i) => {
       console.log(
         `${i++}.`.green +
@@ -40,6 +35,20 @@ class Tasks {
             task.completedOn ? "Completed".green : "Pending".red
           }`
       );
+    });
+  }
+
+  showTasksByCompleted(completed = true) {
+    this.arrList.forEach((task, i) => {
+      if (completed) {
+        task.completedOn
+          ? console.log(
+              `${i++}.`.green + ` ${task.desc} :: ${"Completed".green}`
+            )
+          : null;
+      } else if (!task.completedOn & !completed) {
+        console.log(`${i++}.`.green + ` ${task.desc} :: ${"Pending".red}`);
+      }
     });
   }
 }
