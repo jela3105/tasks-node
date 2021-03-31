@@ -57,8 +57,21 @@ const readInput = async (message) => {
   return desc;
 };
 
+const deleteTasksList = async (tasks = []) => {
+  const choices = tasks.map((task, i) => {
+    const idx = `${i + 1}.`.green;
+    return {
+      value: task.id,
+      name: `${idx} ${task.desc}`,
+    };
+  });
+  console.log(choices);
+  //{ value: "task.id", name: `${"1".green}. Create task` },
+};
+
 module.exports = {
   inquirerMenu,
   pause,
   readInput,
+  deleteTasksList,
 };

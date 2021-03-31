@@ -1,7 +1,12 @@
 require("colors");
 
 const { readData, saveData } = require("./helpers/saveFile");
-const { inquirerMenu, pause, readInput } = require("./helpers/inquirer");
+const {
+  inquirerMenu,
+  pause,
+  readInput,
+  deleteTasksList,
+} = require("./helpers/inquirer");
 const Tasks = require("./models/tasks");
 
 const main = async () => {
@@ -27,6 +32,10 @@ const main = async () => {
         break;
       case "4":
         tasks.showTasksByCompleted(false);
+        break;
+      case "6":
+        const id = deleteTasksList(tasks.arrList);
+        console.log({ id });
         break;
     }
 
