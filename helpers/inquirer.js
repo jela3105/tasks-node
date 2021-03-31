@@ -65,6 +65,7 @@ const deleteTasksList = async (tasks = []) => {
       name: `${idx} ${task.desc}`,
     };
   });
+  choices.unshift({ value: "0", name: "0.".green + " Cancel" });
   const questions = [{ type: "list", name: "id", message: "Delete", choices }];
   const { id } = await inquirer.prompt(questions);
   return id;
