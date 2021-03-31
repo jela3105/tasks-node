@@ -2,6 +2,7 @@ require("colors");
 
 const { readData, saveData } = require("./helpers/saveFile");
 const {
+  confirm,
   inquirerMenu,
   pause,
   readInput,
@@ -35,6 +36,11 @@ const main = async () => {
         break;
       case "6":
         const id = await deleteTasksList(tasks.arrList);
+        const ok = await confirm("Are you sure?");
+        if (ok) {
+          tasks.deleteTask(id);
+          console.log("Task deleted succesfully");
+        }
         break;
     }
 
