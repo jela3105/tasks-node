@@ -34,8 +34,7 @@ const main = async () => {
         tasks.showTasksByCompleted(false);
         break;
       case "6":
-        const id = deleteTasksList(tasks.arrList);
-        console.log({ id });
+        const id = await deleteTasksList(tasks.arrList);
         break;
     }
 

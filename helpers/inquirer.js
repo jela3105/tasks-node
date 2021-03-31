@@ -65,8 +65,9 @@ const deleteTasksList = async (tasks = []) => {
       name: `${idx} ${task.desc}`,
     };
   });
-  console.log(choices);
-  //{ value: "task.id", name: `${"1".green}. Create task` },
+  const questions = [{ type: "list", name: "id", message: "Delete", choices }];
+  const { id } = await inquirer.prompt(questions);
+  return id;
 };
 
 module.exports = {
