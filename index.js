@@ -7,6 +7,7 @@ const {
   pause,
   readInput,
   deleteTasksList,
+  completeTaskCheckList,
 } = require("./helpers/inquirer");
 const Tasks = require("./models/tasks");
 
@@ -33,6 +34,10 @@ const main = async () => {
         break;
       case "4":
         tasks.showTasksByCompleted(false);
+        break;
+      case "5":
+        const ids = await completeTaskCheckList(tasks.arrList);
+        console.log(ids);
         break;
       case "6":
         const id = await deleteTasksList(tasks.arrList);
